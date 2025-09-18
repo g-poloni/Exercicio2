@@ -32,16 +32,21 @@ class MainActivity : AppCompatActivity() {
             if (idade != null){
                 if (idade <= 65 && sexoSelecionado.trim()=="masculino"){
                     resultado=65-idade
-                        if(resultado==0L) {
-                            binding.textview.text = "Idade de se aposentar"
-                        }
-                        else{
-                            binding.textview.text = "Faltam $resultado anos para você se aposentar"
+                    if(resultado==0L) {
+                        binding.textview.text = "Idade de se aposentar"
+                    }
+                    else{
+                        binding.textview.text = "Faltam $resultado anos para você se aposentar"
                     }
                 }
                 else if (idade <= 62 && sexoSelecionado.trim()=="feminino"){
                     resultado=62-idade
-                    binding.textview.text = "Faltam $resultado anos para você se aposentar"
+                    if(resultado==0L) {
+                        binding.textview.text = "Idade de se aposentar"
+                    }
+                    else {
+                        binding.textview.text = "Faltam $resultado anos para você se aposentar"
+                    }
                 }
                 else if (idade > 65 && sexoSelecionado.trim()=="masculino" || idade > 62 && sexoSelecionado.trim()=="feminino") {
                     binding.textview.text = "A idade informada ultrapassou os limites do app"
